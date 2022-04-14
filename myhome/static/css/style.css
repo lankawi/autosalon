@@ -1,0 +1,109 @@
+body {
+   background: url(../myhome/image/bg.jpg);
+}
+@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&family=Playfair+Display:ital,wght@1,600&display=swap');
+body {
+   font-family: 'Oooh Baby', cursive;
+   font-family: 'Playfair Display', serif;
+}
+
+table {
+   width: 100%;
+   border: 1px solid black;
+   background: #545095;
+   color: white;
+   border-collapse: collapse;
+   margin: 10px 10px 10 px;
+}
+
+td {
+   border: 1px solid black;
+   width: 480px;
+   padding: 10px;
+   padding-left: 100px;
+}
+
+.forimghome {
+   display: inline-block;
+   text-align: left;
+}
+
+.avtor {
+   margin-right: 40%;
+}
+
+.for-help-text {
+   color: #FF8C00;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+}
+
+h1 {
+   color: white;
+}
+
+.grid {
+   background-color: rgba(255, 255, 255, 0.65);
+   padding: 10px 10px;
+   width: 30%;
+   display: inline-block;
+   margin-left: 14px;
+   margin-right: 14px;
+   margin-bottom: 20px;
+   text-align: center;
+}
+
+.griddis {
+   padding: 10px 10px;
+   width: 40%;
+   margin-left: 100px;
+   margin-right: 12px;
+   margin-bottom: -400px;
+}
+
+.one {
+   color: grey;
+}
+
+.stroki {
+   background-color: white;
+   color: grey;
+   padding: 5px;
+   margin-left: 55%;
+   margin-top: -16px;
+   border: 1px solid black;
+   width: 30%;
+}
+.niz {
+   text-align: left;
+   background-color: white;
+   color: grey;
+   padding: 5px 5px;
+   width: 75%;
+   border: 1px solid black;
+}
+
+.foexit {
+   align-content: center;
+}
+
+.forexit {
+   background-color: #545095;
+   border: 1px solid black;
+   text-align: center;
+   margin-left: 40%;
+   margin-right: 40%;
+   padding: 10px 10px;
+}
+
+.forexits {
+   background-color: #B4C7FC;
+   border: 1px solid black;
+   text-align: center;
+   margin-left: 40%;
+   margin-right: 40%;
+   padding: 10px 10px;
+}

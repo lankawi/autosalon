@@ -1,0 +1,80 @@
+{% extends "myhome/wrapper.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<br><br><br>
+<div class="griddis ">
+	<div class="g-col-6">
+	  	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+	  		<div class="carousel-indicators">
+	    		<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		  		</div>
+				  	<div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <img src="../pictures/myhome/{{auto_inst.brand}}{{auto_inst.modell}}{{auto_inst.year}}-1.jpg" class="d-block w-100" height="400px">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="../pictures/myhome/{{auto_inst.brand}}{{auto_inst.modell}}{{auto_inst.year}}-2.jpg" class="d-block w-100" height="400px">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="../pictures/myhome/{{auto_inst.brand}}{{auto_inst.modell}}{{auto_inst.year}}-3.jpg" class="d-block w-100" height="400px">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="../pictures/myhome/{{auto_inst.brand}}{{auto_inst.modell}}{{auto_inst.year}}-4.jpg" class="d-block w-100" height="400px">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="../pictures/myhome/{{auto_inst.brand}}{{auto_inst.modell}}{{auto_inst.year}}-5.jpg" class="d-block w-100" height="400px">
+					    </div>
+				  	</div>
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="visually-hidden">Next</span>
+				  </button>
+			  	</div>
+			</div>	
+		</div>
+	</div>
+  	<div class="g-col-4">
+		<p class="stroki">Марка <font color="black">{{ auto_inst.brand }}</font></p>
+		<p class="stroki">Модель <font color="black">{{ auto_inst.modell }}</font></p>
+		<p class="stroki">Год <font color="black">{{ auto_inst.year }}</font></p>
+		<p class="stroki">Топливо <font color="black">{{ auto_inst.type_of_fuel }}</font></p>
+		<p class="stroki">Объем <font color="black">{{ auto_inst.engine_volume }}</font></p>
+		<p class="stroki">Мощность <font color="black">{{ auto_inst.power }}</font></p>
+		<p class="stroki">Коробка передач <font color="black">{{ auto_inst.gearbox }}</font></p>
+		<p class="stroki">Тип кузова <font color="black">{{ auto_inst.body_type }}</font></p>
+		<p class="stroki">Привод <font color="black">{{ auto_inst.drive_unit }}</font></p>
+		<p class="stroki">Цвет кузова <font color="black">{{ auto_inst.body_color }}</font></p>
+		<p class="stroki">Цвет салона <font color="black">{{ auto_inst.interior_color }}</font></p>
+	</div>
+</div>
+<div>
+	<div class="container">
+		<br>
+		<p align="center"><font size="60px">{{ auto_inst.price }} BYN</font></p>
+	</div>
+	<div class="container" align="center">
+		<p class="niz"><font color="black">{{ auto_inst.description }}</font></p>
+	</div>
+</div>
+
+<br>
+	<a href="/">
+		<p class="forexits">Перейти на главную</p>
+	</a>
+
+<script>
+	var myCarousel = document.querySelector('#myCarousel')
+	var carousel = new bootstrap.Carousel(myCarousel)
+</script>
+{% endblock %}

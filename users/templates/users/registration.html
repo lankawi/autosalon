@@ -1,0 +1,38 @@
+{% extends "myhome/wrapper.html" %}
+{% load crispy_forms_tags %}
+{% load custom_tags %}
+
+{% block title_page %}
+	<title>Регистрация на сайте</title>
+{% endblock title_page %}
+
+{% block content %}
+
+<div class="form-section"><font color="white">
+	<h2 class="text-center mt-4 txt_registration2">Регистрация</h2>
+
+	<div class="row">
+		<form method="POST" name="profile" id="profile" class="col col-md-4 text-center mx-auto">
+			{% csrf_token %}
+
+			{% for field in form %}
+			<div class="mb-2 mx-auto txt_registration1">
+				{{ field.errors }}
+				<div class="col-auto">
+					<label for="{{ field.id_for_label }}" class="col-form-label">{{ field.label }}</label>
+				</div>
+				<div class="col-auto">
+					{{ field|add_classes:'form-control' }}
+				</div>
+				 {% if field.help_text %}
+                <small class="form-text text-muted"><font color="black" align="left">{{ field.help_text }}</font></small>
+            {% endif %}
+			</div>
+			{% endfor %}
+			<button type="submit" class="btn btn-primary col-sm-4 mt-2">Регистрация</button>
+		</form>
+	</div></font>
+	<p class="txt_registration1" style="margin-left: 20px">Уже зарегистрированы? <a href="{% url 'login' %}">Войти</a></p>
+</div>
+
+{% endblock %}

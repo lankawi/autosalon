@@ -1,0 +1,31 @@
+{% extends "myhome/wrapper.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+<br>
+      {% include "myhome/includes/header.html" %}
+<br>
+	<h1 align="center">СВЕЖИЕ ПОСТУПЛЕНИЯ</h1>
+	<br>
+<div>
+	{% for el in autos %}
+	<a href="{% url 'show_auto' el.id %}">
+		<div class="grid">
+	  		<img src="../pictures/myhome/{{el.brand}}{{el.modell}}{{el.year}}-1.jpg" height="270px">
+	  		<p class="one">
+	  			<br>
+	  			<font color="black">{{ el.brand }} {{ el.modell }} {{ el.year }} г., </font>
+	  			{{ el.gearbox }}, {{ el.engine_volume }}, {{ el.body_type }}...
+	  			<br>
+	  			<font size="60px">{{ el.price }} BYN</font>
+	  		</p>
+	  	</div>
+	</a>
+
+	{% endfor %}
+</div>
+	
+{% endblock %}

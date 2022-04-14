@@ -1,0 +1,46 @@
+{% extends "myhome/wrapper.html" %}
+{% load crispy_forms_tags %}
+{% load custom_tags %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="form-section">
+	<h2 class="text-center mt-4 txt_registration2">Профиль</h2>    	
+    	<div class="row">
+	        <form method="post" name="profile" id="profile" class="col col-md-4 text-center mx-auto">
+	            {% csrf_token %}
+	            
+				{% for field in form %}
+		        <div class="mb-2 mx-auto txt_registration1">
+		            {{ field.errors }}
+		            <div class="col-auto">
+		            	<label for="{{ field.id_for_label }}" class="col-form-label">{{ field.label }}</label>
+		            </div>
+		            <div class="col-auto">
+		            {{ field|add_classes:'form-control' }}
+		            </div>
+		        </div>
+		    	{% endfor %}
+	    		<!--{% if sub_inst.sub.subscription == 'Base' %}
+		    	<div class="row mt-4 mb-4">
+			    	<div class="col-md-7">
+			    		<p class="txt5 text-end">Ваша подписка: {{ sub_inst.sub }}</p>
+			    	</div>
+			    	<div class="col-md-5">
+			    		<a href="pay" class="btn btn-warning">Купить</a>
+			    	</div>		    		
+			    </div>
+		    	{% else %}
+		    	<p class="txt5 text-center mt-4 mb-4">Ваша подписка: {{ sub_inst.sub }}</p>
+			    {% endif %}-->
+	            <button type="submit" class="btn btn-primary col-sm-4 mt-2">Сохранить</button>
+	            <br>
+	            <br>
+	        </form>
+	    </div>
+	</div>
+</div>
+
+		{% endblock %}

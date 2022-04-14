@@ -1,0 +1,22 @@
+{% block content %}
+
+<nav class="navbar navbar-light bg_navbar navbar-expand-lg" role="navigation" id="navbar">
+	<div class="container-fluid">
+		<div class="collapse navbar-collapse " id="navbar_collapse">
+			{% if user.is_authenticated %}
+				<div class="avtor mx-auto">
+					<a href="{% url 'prof' %}" class="btn btn-outline-secondary">Профиль</a>
+					<a href="{% url 'exit' %}" class="btn btn-outline-secondary">Выход</a>
+				</div>
+			{% else %}
+				<div class="avtor mx-auto">
+					<a href="{% url 'reg' %}" class="btn btn-outline-secondary">Регистрация</a>
+					<a href="{% url 'login' %}" class="btn btn-outline-secondary">Вход</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</nav>
+
+
+{% endblock %}

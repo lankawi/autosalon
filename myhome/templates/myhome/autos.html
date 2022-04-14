@@ -1,0 +1,23 @@
+{% extends "myhome/wrapper.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		{% for auto in autos_list %}
+		
+		<div class="col-md-6 col-sm-12 text-center">
+			<p class="txt3">{{auto.ru}}</p>
+			<a href="{% url 'show_auto' auto.id %}"><img src="{{ auto.img.url }}"  class="forimgfilm" /></a>
+			<p class="txt4">Жанр: {{auto.brand}}</p>
+			<p> --------------- </p>
+		</div>
+		
+		{% endfor %}
+	</div>
+</div>
+
+
+{% endblock %}

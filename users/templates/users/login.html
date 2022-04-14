@@ -1,0 +1,38 @@
+{% extends "myhome/wrapper.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title_page %}
+	<title>Авторизация</title>
+{% endblock title_page %}
+
+{% block content %}
+
+<div class="form-section"><font color="white">
+	<h2 class="text-center mt-4 txt_registration2">Авторизация</h2>    	
+    	<div class="row">
+	        <form method="post" name="profile" id="profile" class="col col-md-4 text-center mx-auto">
+	            {% csrf_token %}
+	            
+				{% for field in form %}
+		        <div class="mb-2 mx-auto txt_registration1">
+		            {{ field.errors }}
+		            <div class="col-auto">
+		            	<label for="{{ field.id_for_label }}" class="col-form-label">{{ field.label }}</label>
+		            </div>
+		            <div class="col-auto">
+		            {{ field }}
+		            </div>
+		        </div>
+		    	{% endfor %}
+		    	
+	            <button type="submit" class="btn btn-primary col-sm-4 mt-2">Войти</button>
+	        </form>
+	    </div>
+	</div></font>
+	<br><hr><br>
+	<p class="txt_registration1" style="margin-left: 20px;">Нет профиля? <a href="{% url 'reg' %}">Зарегистрироваться</a></p>
+</div>
+
+
+{% endblock %}
